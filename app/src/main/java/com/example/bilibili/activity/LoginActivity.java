@@ -1,5 +1,6 @@
 package com.example.bilibili.activity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,11 @@ import androidx.annotation.Nullable;
 
 import com.example.bilibili.BaseActivity;
 import com.example.bilibili.R;
+import com.example.bilibili.bmob.BBManager;
 import com.xuexiang.xui.widget.toast.XToast;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     private ImageView ivClose;
@@ -35,6 +40,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         ivClose = findViewById(R.id.iv_close_login);
         ivSend = findViewById(R.id.iv_send_login);
         etPhone = findViewById(R.id.et_phone_login);
+        ivClose.setOnClickListener(this);
+
     }
 
     @Override
@@ -65,6 +72,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             XToast.warning(this, "请输入正确的手机号").show();
             return;
         }
+
+        BBManager.getInstance().sendCode(phone, new QueryListener<Integer>() {
+            @Override
+            public void done(Integer integer, BmobException e) {
+                if (e == null) {
+
+                    Intent intent = new Intent();
+
+                } else {
+                    XToast.warning(LoginActivity.this, "失败   " + e.getErrorCode()).show();
+                }
+            }
+        });
 
     }
 }
