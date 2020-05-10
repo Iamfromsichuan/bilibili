@@ -26,7 +26,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         initView();
     }
 
@@ -41,7 +41,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         ivSend = findViewById(R.id.iv_send_login);
         etPhone = findViewById(R.id.et_phone_login);
         ivClose.setOnClickListener(this);
-
+        ivSend.setOnClickListener(this);
     }
 
     @Override
@@ -77,9 +77,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             @Override
             public void done(Integer integer, BmobException e) {
                 if (e == null) {
-
-                    Intent intent = new Intent();
-
+                    Intent intent =
+                            new Intent(LoginActivity.this,
+                                    CheckActivity.class);
+                    intent.putExtra("phone", phone);
+                    startActivityForResult(intent, 1000);
                 } else {
                     XToast.warning(LoginActivity.this, "失败   " + e.getErrorCode()).show();
                 }
