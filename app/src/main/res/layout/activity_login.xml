@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:padding="5dp"
-            android:src="@drawable/ic_close_24dp" />
+            android:src="@drawable/ic_close_32dp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -72,7 +72,7 @@
             android:inputType="phone"
             android:maxLength="11"
             android:textColor="@color/text_main"
-            android:textColorHint="@color/text_main1"
+            android:textColorHint="@color/text_main"
             android:textSize="16sp"
             android:textStyle="bold"/>
     </androidx.cardview.widget.CardView>
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="未注册的账户登录后自动创建账户"
-        android:textColor="@color/text_main1"
+        android:textColor="@color/text_main"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />

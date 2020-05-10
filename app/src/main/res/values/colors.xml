@@ -3,9 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="mainColor">#03DAC5</color>
+    <color name="main_color">#03DAC5</color>
 
     <color name="main_btn">#ff7544</color>
+    <color name="main_huang">#ff7544</color>
     <color name="text_main">#49496a</color>
     <color name="text_fu2">#838895</color>
     <color name="main_bac">#f8f8f8</color>

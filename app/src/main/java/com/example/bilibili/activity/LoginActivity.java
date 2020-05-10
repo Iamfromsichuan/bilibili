@@ -2,6 +2,7 @@ package com.example.bilibili.activity;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -9,11 +10,13 @@ import androidx.annotation.Nullable;
 
 import com.example.bilibili.BaseActivity;
 import com.example.bilibili.R;
+import com.xuexiang.xui.widget.toast.XToast;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
     private ImageView ivClose;
     private ImageView ivSend;
     private EditText etPhone;
+    private String phone;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +44,27 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void initEvent() {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_close_login:
+                finish();
+                break;
+            case R.id.iv_send_login:
+                sendCode();
+                break;
+        }
+    }
+
+    private void sendCode() {
+        phone = etPhone.getText().toString();
+        if (phone.length() != 11) {
+            XToast.warning(this, "请输入正确的手机号").show();
+            return;
+        }
 
     }
 }

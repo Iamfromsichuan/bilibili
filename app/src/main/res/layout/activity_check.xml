@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:padding="5dp"
-            android:src="@drawable/ic_left_24dp" />
+            android:src="@drawable/ic_left_32dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             android:layout_gravity="center_vertical"
             android:text="向手机号"
             android:textSize="12sp"
-            android:textColor="@color/text_main1"/>
+            android:textColor="@color/text_main"/>
         <TextView
             android:id="@+id/tv_phone_check"
             android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
             android:layout_gravity="center_vertical"
             android:text="发送了一条验证码"
             android:textSize="12sp"
-            android:textColor="@color/text_main1"/>
+            android:textColor="@color/text_main"/>
         <ImageView
             android:id="@+id/iv_up_check"
             android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
             app:vcet_is_pwd="false"
             app:vcet_number="6"
             app:vcet_pwd_radius="10dp"
-            app:vcet_text_color="@color/text_black"
+            app:vcet_text_color="@color/text_main"
             app:vcet_text_size="24sp"
             app:vcet_width="50dp" />
     </RelativeLayout>
@@ -128,7 +128,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         android:theme="@style/Theme.MaterialComponents.Light"
-        app:backgroundTint="@color/text_main1"
+        app:backgroundTint="@color/text_main"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

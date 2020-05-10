@@ -16,7 +16,7 @@ public class App extends Application {
         Bmob.initialize(this, key);
         // 初始化
         XUI.init(this);
-        XUI.debug(true);
+        // XUI.debug(true);
 
         SDKInitializer.initialize(this);
         SDKInitializer.setCoordType(CoordType.BD09LL);
